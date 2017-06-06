@@ -6,6 +6,7 @@ class Poll:
         self.poll_choices = []
         self.poll_question = ""
         self.choice_tally = {}
+        self.poll_is_open = True
         
     #determine if a voter has already voted
     def validVote(self, voter ):
@@ -33,7 +34,7 @@ class Poll:
 
     #tallies a vote on a given choice if is a valid Vote
     def vote(self, voter, voteIDX ):
-        if not self.validVote(voter): 
+        if not self.validVote(voter) and self.poll_is_open is True:
             return False
         else: 
             self.choice_tally[int(voteIDX)] += 1 
@@ -50,3 +51,7 @@ class Poll:
             if value == most:
                 highest.append(key) 
         return highest
+
+    #close the poll(unable to vote)
+    def close_poll(self):
+        self.poll_is_open = False
