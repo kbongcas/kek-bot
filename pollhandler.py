@@ -1,4 +1,5 @@
 import creatPoll
+import pollv2
 
 user1 = "kevin" 
 user2 = "steve" 
@@ -36,4 +37,9 @@ print("The winner is: ")
 print(creatPoll.find_winners())
 
 
-
+poll1 = pollv2.Poll()
+poll1.create_poll(string2parse)
+poll1.vote("steveen","1")
+poll1.vote("steveen","2")
+poll1.vote("sddteveen","4")
+print(poll1.find_winners())
