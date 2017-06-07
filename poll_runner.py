@@ -4,8 +4,6 @@ import time
 
 def split():
     time.sleep(5)
-    print(poll1.find_winners())
-    poll1.close_poll()
 
 if __name__ == "__main__":
 
