@@ -55,3 +55,23 @@ class Poll:
     #close the poll(unable to vote)
     def close_poll(self):
         self.poll_is_open = False
+
+    #shows the options and their tallies
+    def give_results(self):
+        results = ""
+        for key, value in self.choice_tally.items():
+            results += str(key) + " "
+            results += self.poll_choices[key]
+            results += ": " 
+            results += str(value) + "\n"
+        return results
+            
+    def give_poll(self):
+        pollstr = ""
+        pollstr += self.poll_question + "\n"
+        for counter in range(1, len(self.poll_choices)) :
+            pollstr += str(counter) + " " 
+            pollstr += self.poll_choices[counter] + "\n"
+        return pollstr
+
+

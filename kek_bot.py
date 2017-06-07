@@ -38,10 +38,11 @@ async def pollstart():
 
     t = threading.Thread(target=poll_runner.split, args=())
     t.start()
+    await kek_bot.say(poll1.give_poll())
     poll1.vote("kevin","1")
     t.join()
     poll1.close_poll()
-    await kek_bot.say(poll1.find_winners())
+    await kek_bot.say(poll1.give_results())
 
 kek_bot.run(clientDetails.BOT_TOKEN)
         
