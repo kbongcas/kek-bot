@@ -29,22 +29,9 @@ async def helpme():
 #        return None
 #    await kek_bot.join_voice_channel(voiceChannel)
 #   print("has joined a voice channel" + kek_bot.user.name)
-
-@kek_bot.command()
-async def pollstart():
-    string2parse = "Did I just make a python program?|yah|notreally|sure|imreaddy"
-    poll1 = poll.Poll()
-    poll1.create_poll(string2parse)
-
-    t = threading.Thread(target=poll_runner.split, args=())
-    t.start()
-    await kek_bot.say(poll1.give_poll())
-    poll1.vote("kevin","1")
-    t.join()
-    poll1.close_poll()
-    await kek_bot.say(poll1.give_results())
-
-kek_bot.run(clientDetails.BOT_TOKEN)
         
+
+
+
 
 
