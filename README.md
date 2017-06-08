@@ -1,9 +1,9 @@
-#kek-bot
+# kek-bot
 
 A very simple Discord bot written in python and uses an [API wrapper].
 Mainly used for learning purposes. 
 
-##TODO
+## TODO
 
 * implement cogs
 
